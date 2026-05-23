@@ -40,8 +40,14 @@ return true;
 
     @PutMapping("/id/{id}")
     public JournalEntry updatebyid(@PathVariable Integer id,@RequestBody JournalEntry myentry){
-        return null;
+        JournalEntry old=journalEntryService.getid(id).orElse(null);
+        if(old!=null){
+            old.setName(myentry.getName() !=null && !myentry.getName().equals("")? myentry.getName(): old.getName());
+            old.setContent(myentry.getContent() !=null && !myentry.getContent().equals("")? myentry.getContent(): old.getContent());
 
+        }
+ journalEntryService.saveEntry(old);
+        return old;
     }
 
 
