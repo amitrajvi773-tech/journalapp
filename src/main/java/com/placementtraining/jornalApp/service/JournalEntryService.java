@@ -23,6 +23,7 @@ public class JournalEntryService  {
     }
 
     public Optional<JournalEntry> getid(Integer myid){
+
         return journalEntryRepository.findById(myid);
     }
     public void deleteid(Integer id){

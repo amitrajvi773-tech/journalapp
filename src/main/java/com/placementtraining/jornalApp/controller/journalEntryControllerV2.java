@@ -42,8 +42,8 @@ return true;
     public JournalEntry updatebyid(@PathVariable Integer id,@RequestBody JournalEntry myentry){
         JournalEntry old=journalEntryService.getid(id).orElse(null);
         if(old!=null){
-            old.setName(myentry.getName() !=null && !myentry.getName().equals("")? myentry.getName(): old.getName());
-            old.setContent(myentry.getContent() !=null && !myentry.getContent().equals("")? myentry.getContent(): old.getContent());
+            old.setName(myentry.getName() !=null && !myentry.getName().isEmpty() ? myentry.getName(): old.getName());
+            old.setContent(myentry.getContent() !=null && !myentry.getContent().isEmpty() ? myentry.getContent(): old.getContent());
 
         }
  journalEntryService.saveEntry(old);
