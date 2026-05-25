@@ -1,17 +1,16 @@
 package com.placementtraining.jornalApp.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Entity
-@Table(name = "journal_enteries")
-
+@NoArgsConstructor
 @Data
 public class JournalEntry {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String content;

@@ -1,24 +1,28 @@
 package com.placementtraining.jornalApp.entity;
 
+import com.placementtraining.jornalApp.entity.JournalEntry;
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NonNull;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="users")
 @Data
+@NoArgsConstructor
 public class User {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(unique=true)
-    @NonNull
+
+    @Column(unique = true, nullable = false)
     private String username;
-    @NonNull
+
+    @Column(nullable = false)
     private String password;
 
-    @OneToMany
-    private List<JournalEntry> journalEntries=new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<JournalEntry> journalEntries = new ArrayList<>();
 }

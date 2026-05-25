@@ -19,13 +19,15 @@ public class JournalEntryService  {
     }
 
     public List<JournalEntry> getALL() {
-       return journalEntryRepository.findAll();
+
+        return journalEntryRepository.findAll();
     }
 
     public Optional<JournalEntry> getid(Integer myid){
 
         return journalEntryRepository.findById(myid);
     }
+
     public void deleteid(Integer id){
          journalEntryRepository.deleteById(id);
 
