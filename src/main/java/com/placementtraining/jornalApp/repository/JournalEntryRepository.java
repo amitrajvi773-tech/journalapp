@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface JournalEntryRepository
         extends JpaRepository<JournalEntry, Integer> {
 
+
 }
