@@ -3,6 +3,7 @@ package com.placementtraining.jornalApp.service;
 import com.placementtraining.jornalApp.entity.JournalEntry;
 import com.placementtraining.jornalApp.entity.User;
 import com.placementtraining.jornalApp.repository.JournalEntryRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,17 +18,26 @@ public class JournalEntryService  {
     @Autowired
     UserService userService;
 
+    @Transactional
     public void saveEntry(  JournalEntry journalEntry,String username){
-        User user =userService.findByUsername(username);
-        if(user != null){
-            JournalEntry saved = journalEntryRepository.save(journalEntry);
+       User user =userService.findByUsername(username);
+        try {
 
-            user.getJournalEntries().add(saved);
+                if (user != null) {
+                    JournalEntry saved = journalEntryRepository.save(journalEntry);
 
-            userService.saveEntry(user);
-        }else {
-            System.out.println("user not exist");;
+                    user.getJournalEntries().add(saved);
+
+                    userService.saveEntry(user);
+                } else {
+                    System.out.println("user not exist");
+                    ;
+                }
+        } catch (Exception e) {
+            throw new RuntimeException("error coming in saveEntry",e);
         }
+
+
 
     }
     public void putsaveEntry(  JournalEntry journalEntry){
