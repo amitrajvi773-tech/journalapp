@@ -21,7 +21,7 @@ public class journalEntryControllerV2 {
     @Autowired
     private UserService userService;
 
-    @GetMapping("{username}")
+    @GetMapping("/{username}")
     public ResponseEntity<?> getallentryfromuser(@PathVariable String username) {
         User user=userService.findByUsername(username);
         List<JournalEntry> all=user.getJournalEntries();
@@ -32,7 +32,7 @@ public class journalEntryControllerV2 {
 
     }
 
-    @PostMapping("{username}")
+    @PostMapping("/{username}")
     public ResponseEntity<?> createEntry(@RequestBody JournalEntry myentry,@PathVariable String username){
         try {
             journalEntryService.saveEntry(myentry,username);
