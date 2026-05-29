@@ -23,10 +23,10 @@ public class UserController {
     @Autowired
     private SpringSecurity springSecurity;
 
-//    @GetMapping
-//    public List<User> getalluser(){
-//      return  userService.getALL();
-//    }
+    @GetMapping
+    public List<User> getalluser(){
+      return  userService.getALL();
+    }
 
 
 

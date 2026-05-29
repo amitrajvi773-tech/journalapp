@@ -27,7 +27,8 @@ public class User {
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<JournalEntry> journalEntries = new ArrayList<>();
-    private List<String> userrole;
+    @ElementCollection(fetch = FetchType.EAGER)
+    private List<String> userrole=new ArrayList<>();
 
 
 }
