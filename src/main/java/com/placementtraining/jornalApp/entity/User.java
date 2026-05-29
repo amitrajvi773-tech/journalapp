@@ -23,9 +23,11 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+
+
     @OneToMany(cascade = CascadeType.ALL)
     private List<JournalEntry> journalEntries = new ArrayList<>();
-
+    private List<String> userrole;
 
 
 }
