@@ -1,5 +1,6 @@
 package com.placementtraining.jornalApp.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.placementtraining.jornalApp.entity.JournalEntry;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -21,6 +22,7 @@ public class User {
     private String username;
 
     @Column(nullable = false)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
 

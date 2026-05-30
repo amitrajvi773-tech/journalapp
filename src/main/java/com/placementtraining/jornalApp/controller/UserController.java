@@ -24,10 +24,14 @@ public class UserController {
     private SpringSecurity springSecurity;
 
     @GetMapping
-    public List<User> getalluser(){
-      return  userService.getALL();
-    }
+    public User getUser() {
+        Authentication authentication =
+                SecurityContextHolder.getContext().getAuthentication();
 
+        String username = authentication.getName();
+
+        return userService.findByUsername(username);
+    }
 
 
     @PutMapping
