@@ -36,15 +36,26 @@ public class UserController {
 
     @PutMapping
     public ResponseEntity<?> updateuser(@RequestBody User user){
-        Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
-        String username=authentication.getName();
-        User userindb=userService.findByUsername(username);
-             userindb.setUsername(user.getUsername());
-             userindb.setPassword(user.getPassword());
-             userService.saveEntry(userindb);
+        try {
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            String username = authentication.getName();
 
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            User userindb = userService.findByUsername(username);
 
+            System.out.println("Logged user = " + username);
+            System.out.println("DB User = " + userindb);
+
+            userindb.setUsername(user.getUsername());
+            userindb.setPassword(user.getPassword());
+
+            userService.saveEntry(userindb);
+
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
 }
