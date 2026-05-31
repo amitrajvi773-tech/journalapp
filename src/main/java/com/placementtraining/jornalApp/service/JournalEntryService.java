@@ -25,7 +25,7 @@ public class JournalEntryService  {
             if (user != null) {
             JournalEntry saved = journalEntryRepository.save(journalEntry);
             user.getJournalEntries().add(saved);
-            userService.saveNewUser(user);}
+            userService.saveUser(user);}
             else{
                 System.out.println("user not exist");
             }
@@ -50,10 +50,11 @@ public class JournalEntryService  {
     public void deleteid(Integer id, String username){
         try{
         User user =userService.findByUsername(username);
-        boolean removed= user.getJournalEntries().removeIf(x ->user.getId().equals(id));
+        boolean removed= user.getJournalEntries().removeIf(x ->x.getId().equals(id));
         if(removed){
         userService.saveUser(user);
-        journalEntryRepository.deleteById(id);}} catch (Exception e) {
+        journalEntryRepository.deleteById(id);
+            System.out.println("removed by id");}} catch (Exception e) {
             System.out.println(e);
             throw new RuntimeException("error occur during deleting journalentry",e);
         }

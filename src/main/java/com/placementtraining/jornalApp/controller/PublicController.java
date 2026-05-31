@@ -19,7 +19,7 @@ public class PublicController {
             userService.saveNewUser(user);
             return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        }
+            e.printStackTrace();
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);        }
     }
 }

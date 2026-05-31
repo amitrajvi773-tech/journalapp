@@ -21,6 +21,10 @@ public class UserController {
     @Autowired
     private SpringSecurity springSecurity;
 
+    @GetMapping("/test")
+    public String test() {
+        return "working";
+    }
     @GetMapping
     public User getUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
