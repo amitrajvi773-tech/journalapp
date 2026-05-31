@@ -13,20 +13,12 @@ public class PublicController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/test")
-    public String test() {
-        System.out.println("get test hit");
-        return "working";
-    }
-
     @PostMapping
     public ResponseEntity<?> createuser(@RequestBody User user){
         try {
-            System.out.println("Controller reached");
-            userService.saveEntry(user);
+            userService.saveNewUser(user);
             return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (Exception e) {
-            System.out.println("Controller not  reached");
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }

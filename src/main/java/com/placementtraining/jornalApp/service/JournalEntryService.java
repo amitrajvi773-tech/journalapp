@@ -22,23 +22,16 @@ public class JournalEntryService  {
     public void saveEntry(  JournalEntry journalEntry,String username){
        User user =userService.findByUsername(username);
         try {
-
-                if (user != null) {
-                    JournalEntry saved = journalEntryRepository.save(journalEntry);
-
-                    user.getJournalEntries().add(saved);
-
-                    userService.saveEntry(user);
-                } else {
-                    System.out.println("user not exist");
-                    ;
-                }
+            if (user != null) {
+            JournalEntry saved = journalEntryRepository.save(journalEntry);
+            user.getJournalEntries().add(saved);
+            userService.saveNewUser(user);}
+            else{
+                System.out.println("user not exist");
+            }
         } catch (Exception e) {
             throw new RuntimeException("error coming in saveEntry",e);
         }
-
-
-
     }
     public void putsaveEntry(  JournalEntry journalEntry){
        journalEntryRepository.save(journalEntry);
@@ -55,10 +48,16 @@ public class JournalEntryService  {
     }
 
     public void deleteid(Integer id, String username){
+        try{
         User user =userService.findByUsername(username);
-        user.getJournalEntries().removeIf(x ->user.getId().equals(id));
-        userService.saveEntry(user);
-        journalEntryRepository.deleteById(id);
+        boolean removed= user.getJournalEntries().removeIf(x ->user.getId().equals(id));
+        if(removed){
+        userService.saveUser(user);
+        journalEntryRepository.deleteById(id);}} catch (Exception e) {
+            System.out.println(e);
+            throw new RuntimeException("error occur during deleting journalentry",e);
+        }
+
 
     }
 }

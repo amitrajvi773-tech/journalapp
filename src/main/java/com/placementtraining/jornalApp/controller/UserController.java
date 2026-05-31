@@ -10,8 +10,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 
 @RequestMapping("/user")
@@ -25,11 +23,8 @@ public class UserController {
 
     @GetMapping
     public User getUser() {
-        Authentication authentication =
-                SecurityContextHolder.getContext().getAuthentication();
-
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
-
         return userService.findByUsername(username);
     }
 
@@ -39,16 +34,11 @@ public class UserController {
         try {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             String username = authentication.getName();
-
             User userindb = userService.findByUsername(username);
-
-            System.out.println("Logged user = " + username);
-            System.out.println("DB User = " + userindb);
-
             userindb.setUsername(user.getUsername());
             userindb.setPassword(user.getPassword());
 
-            userService.saveEntry(userindb);
+            userService.saveNewUser(userindb);
 
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
