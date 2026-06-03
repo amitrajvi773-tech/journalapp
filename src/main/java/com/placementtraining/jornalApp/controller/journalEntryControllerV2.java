@@ -24,10 +24,10 @@ public class journalEntryControllerV2 {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/test")
-    public String test() {
-        return "working";
-    }
+//    @GetMapping("/test")
+//    public String test() {
+//        return "working";
+//    }
 
     @GetMapping
     public ResponseEntity<?> getallentryfromuser() {

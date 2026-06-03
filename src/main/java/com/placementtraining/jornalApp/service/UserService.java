@@ -31,8 +31,11 @@ public class UserService {
     }
 
     public Optional<User> getid(Integer myid){
-
         return userRepository.findById(myid);
+    }
+
+    public List<User> getAll(){
+      return   userRepository.findAll();
     }
 
     public void deleteid(Integer id){
