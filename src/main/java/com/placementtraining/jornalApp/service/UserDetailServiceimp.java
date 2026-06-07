@@ -27,6 +27,10 @@ public class UserDetailServiceimp implements UserDetailsService {
         System.out.println("loadUserByUsername called: " + username);
 
         User user= userRepository.findByUsername(username);
+        if (user == null) {
+            throw new UsernameNotFoundException(
+                    "User not found: " + username);
+        }
         System.out.println(
                 passwordEncoder.matches(
                         "amit1234",

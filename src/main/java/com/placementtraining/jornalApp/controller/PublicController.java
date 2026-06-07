@@ -13,6 +13,11 @@ public class PublicController {
     @Autowired
     UserService userService;
 
+    @GetMapping("/test")
+    public void testing(){
+        System.out.println("hello testing happening");
+    }
+
     @PostMapping
     public ResponseEntity<?> createuser(@RequestBody User user){
         try {

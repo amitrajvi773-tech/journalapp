@@ -4,6 +4,8 @@ import com.placementtraining.jornalApp.entity.JournalEntry;
 import com.placementtraining.jornalApp.entity.User;
 import com.placementtraining.jornalApp.repository.JournalEntryRepository;
 import jakarta.transaction.Transactional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,9 @@ public class JournalEntryService  {
 
     @Autowired
     UserService userService;
+
+    private static final Logger logger =
+             LoggerFactory.getLogger(JournalEntryService.class);
 
     @Transactional
     public void saveEntry(  JournalEntry journalEntry,String username){

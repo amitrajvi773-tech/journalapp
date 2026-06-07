@@ -18,8 +18,8 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @Autowired
-    private SpringSecurity springSecurity;
+//    @Autowired
+//    private SpringSecurity springSecurity;
 
     @GetMapping("/test")
     public String test() {
