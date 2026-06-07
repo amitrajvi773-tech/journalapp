@@ -21,7 +21,6 @@ public class PublicController {
     @PostMapping
     public ResponseEntity<?> createuser(@RequestBody User user){
         try {
-            userService.saveNewUser(user);
             return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (Exception e) {
             e.printStackTrace();
