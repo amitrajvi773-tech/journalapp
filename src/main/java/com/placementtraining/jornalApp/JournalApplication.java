@@ -11,5 +11,5 @@ public class JournalApplication {
 	public static void main(String[] args) {
 		System.out.println("APPLICATION STARTING...");
 		SpringApplication.run(JournalApplication.class, args);
-	}
+	} 
 }
