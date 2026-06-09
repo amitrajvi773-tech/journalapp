@@ -31,12 +31,7 @@ public class UserDetailServiceimp implements UserDetailsService {
             throw new UsernameNotFoundException(
                     "User not found: " + username);
         }
-        System.out.println(
-                passwordEncoder.matches(
-                        "amit1234",
-                        user.getPassword()
-                )
-        );
+
       if(user !=null ){
           return org.springframework.security.core.userdetails.User.builder()
                   .username(user.getUsername())

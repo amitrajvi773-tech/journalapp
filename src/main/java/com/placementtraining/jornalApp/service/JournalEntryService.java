@@ -4,6 +4,7 @@ import com.placementtraining.jornalApp.entity.JournalEntry;
 import com.placementtraining.jornalApp.entity.User;
 import com.placementtraining.jornalApp.repository.JournalEntryRepository;
 import jakarta.transaction.Transactional;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Slf4j
 @Service
 public class JournalEntryService  {
     @Autowired
@@ -58,8 +59,9 @@ public class JournalEntryService  {
         if(removed){
         userService.saveUser(user);
         journalEntryRepository.deleteById(id);
-            System.out.println("removed by id");}} catch (Exception e) {
-            System.out.println(e);
+            System.out.println("removed by id");}}
+        catch (Exception e) {
+            log.error("id not found",e);
             throw new RuntimeException("error occur during deleting journalentry",e);
         }
 
