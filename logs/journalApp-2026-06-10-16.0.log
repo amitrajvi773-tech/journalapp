@@ -1,0 +1,112 @@
+2026-06-10 16:20:44 [main]  INFO c.p.jornalApp.JournalApplication - Starting JournalApplication using Java 17.0.19 with PID 3064 (C:\Users\AMIT PARATAP SINGH\Downloads\jornalApp\jornalApp\target\classes started by AMIT PARATAP SINGH in C:\Users\AMIT PARATAP SINGH\Downloads\jornalApp\jornalApp)
+2026-06-10 16:20:44 [main]  INFO c.p.jornalApp.JournalApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-10 16:20:45 [main]  INFO o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-10 16:20:45 [main]  INFO o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 61 ms. Found 2 JPA repository interfaces.
+2026-06-10 16:20:46 [main]  INFO o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-06-10 16:20:46 [main]  INFO o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-06-10 16:20:46 [main]  INFO o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-10 16:20:46 [main]  INFO o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-10 16:20:47 [main]  INFO o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2502 ms
+2026-06-10 16:20:47 [main]  INFO org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-10 16:20:47 [main]  INFO org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-10 16:20:48 [main]  INFO o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-10 16:20:48 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-10 16:20:48 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@77ec9fdb
+2026-06-10 16:20:48 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-10 16:20:49 [main]  INFO o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/journaldb]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.45
+	Default catalog/schema: journaldb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-10 16:20:50 [main]  INFO org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-10 16:20:50 [main]  INFO o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-10 16:20:51 [main]  INFO o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-10 16:20:51 [main]  WARN o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'weatherService': No qualifying bean of type 'com.placementtraining.jornalApp.service.WeatherService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2026-06-10 16:20:51 [main]  INFO o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-10 16:20:51 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-10 16:20:51 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-10 16:20:51 [main]  INFO o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-06-10 16:20:51 [main]  INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-10 16:20:51 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field weatherService in com.placementtraining.jornalApp.controller.UserController required a bean of type 'com.placementtraining.jornalApp.service.WeatherService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.placementtraining.jornalApp.service.WeatherService' in your configuration.
+
+2026-06-10 16:23:33 [main]  INFO c.p.jornalApp.JournalApplication - Starting JournalApplication using Java 17.0.19 with PID 7632 (C:\Users\AMIT PARATAP SINGH\Downloads\jornalApp\jornalApp\target\classes started by AMIT PARATAP SINGH in C:\Users\AMIT PARATAP SINGH\Downloads\jornalApp\jornalApp)
+2026-06-10 16:23:33 [main]  INFO c.p.jornalApp.JournalApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-10 16:23:35 [main]  INFO o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-10 16:23:35 [main]  INFO o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 2 JPA repository interfaces.
+2026-06-10 16:23:37 [main]  INFO o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-06-10 16:23:37 [main]  INFO o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-06-10 16:23:37 [main]  INFO o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-10 16:23:37 [main]  INFO o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-10 16:23:37 [main]  INFO o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3685 ms
+2026-06-10 16:23:38 [main]  INFO org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-10 16:23:38 [main]  INFO org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-10 16:23:39 [main]  INFO o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-10 16:23:39 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-10 16:23:40 [main]  INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@72b10258
+2026-06-10 16:23:40 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-10 16:23:40 [main]  INFO o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/journaldb]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.45
+	Default catalog/schema: journaldb/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-10 16:23:42 [main]  INFO org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-10 16:23:42 [main]  INFO o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-10 16:23:42 [main]  INFO o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-10 16:23:42 [main]  WARN o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'weatherService': Error creating bean with name 'weatherService': Unsatisfied dependency expressed through field 'restTemplate': No qualifying bean of type 'org.springframework.web.client.RestTemplate' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2026-06-10 16:23:42 [main]  INFO o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-10 16:23:42 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-10 16:23:42 [main]  INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-10 16:23:42 [main]  INFO o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-06-10 16:23:42 [main]  INFO o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-10 16:23:42 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field restTemplate in com.placementtraining.jornalApp.service.WeatherService required a bean of type 'org.springframework.web.client.RestTemplate' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.web.client.RestTemplate' in your configuration.
+

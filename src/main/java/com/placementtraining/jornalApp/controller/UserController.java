@@ -58,7 +58,7 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    @DeleteMapping("Weather")
+    @GetMapping("Weather")
     public ResponseEntity<?>  greeting(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         WeatherResponse weatherResponse=weatherService.getWeather("Jaipur");
@@ -66,7 +66,7 @@ public class UserController {
         if(weatherResponse!=null){
             weather=",weather feel like "  + weatherResponse.getMain().getTemp();
         }
-        return new ResponseEntity<>("hi"+authentication.getName()+weather,HttpStatus.OK);
+        return new ResponseEntity<>("hi" +authentication.getName()+weather +"celcious",HttpStatus.OK);
 
     }
 

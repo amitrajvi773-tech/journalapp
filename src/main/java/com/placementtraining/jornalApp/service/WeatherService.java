@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class WeatherService {
     private static final String apikey="62a2da6f1e7bcc57060e795c33a4e2c2";
-    private static final String API="https://api.openweathermap.org/data/2.5/weather?q=Delhi&appid=YOUR_KEY&query=CITY";
+    private static final String API="https://api.openweathermap.org/data/2.5/weather?q=Delhi&appid=YOUR_KEY&query=CITY&units=metric";
 
     @Autowired
     RestTemplate restTemplate;
