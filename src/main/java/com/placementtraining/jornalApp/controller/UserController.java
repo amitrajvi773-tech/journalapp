@@ -64,9 +64,10 @@ public class UserController {
         WeatherResponse weatherResponse=weatherService.getWeather("Jaipur");
         String weather="";
         if(weatherResponse!=null){
-            weather=",weather feel like "  + weatherResponse.getMain().getTemp();
+            weather= ", City: " + weatherResponse.getName() + ", Temperature: " + weatherResponse.getMain().getTemp()
+                    + "°C" + ", Condition: " + weatherResponse.getWeather().get(0).getDescription();
         }
-        return new ResponseEntity<>("hi" +authentication.getName()+weather +"celcious",HttpStatus.OK);
+        return new ResponseEntity<>("hi" +authentication.getName()+weather +"°C",HttpStatus.OK);
 
     }
 

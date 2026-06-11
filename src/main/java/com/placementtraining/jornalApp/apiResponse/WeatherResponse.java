@@ -6,13 +6,21 @@ import java.util.List;
 @Data
 public class WeatherResponse {
 
+    private String name;      // City name
     private Main main;
+    private Wind wind;
     private List<Weather> weather;
-    private String name;
 
     @Data
     public static class Main {
         private double temp;
+        private int humidity;
+        private int pressure;
+    }
+
+    @Data
+    public static class Wind {
+        private double speed;
     }
 
     @Data
