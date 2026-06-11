@@ -67,7 +67,7 @@ public class UserController {
             weather= ", City: " + weatherResponse.getName() + ", Temperature: " + weatherResponse.getMain().getTemp()
                     + "°C" + ", Condition: " + weatherResponse.getWeather().get(0).getDescription();
         }
-        return new ResponseEntity<>("hi" +authentication.getName()+weather +"°C",HttpStatus.OK);
+        return new ResponseEntity<>("hi " + authentication.getName() +" Weather of "+ weather +"°C",HttpStatus.OK);
 
     }
 
