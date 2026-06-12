@@ -29,7 +29,7 @@ public class journalEntryControllerV2 {
 //        return "working";
 //    }
 
-    @GetMapping
+    @GetMapping("/user")
     public ResponseEntity<?> getallentryfromuser() {
         Authentication authentication =
                 SecurityContextHolder.getContext().getAuthentication();

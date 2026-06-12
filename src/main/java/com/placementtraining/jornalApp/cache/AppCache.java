@@ -2,6 +2,7 @@ package com.placementtraining.jornalApp.cache;
 
 import com.placementtraining.jornalApp.entity.ConfigJournalAppEntry;
 import com.placementtraining.jornalApp.repository.ConfigJournalAppRepository;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,9 +17,12 @@ public class AppCache {
 
     public Map<String,String> App_Cache=new HashMap<>();
 
+    @PostConstruct
     public void init(){
         List<ConfigJournalAppEntry> all=configJournalAppRepository.findAll();
         for(ConfigJournalAppEntry configJournalAppEntry:all){
-        App_Cache.put(configJournalAppEntry.getKey(),configJournalAppEntry.getValue());}
+        App_Cache.put(configJournalAppEntry.getConfigkey(),configJournalAppEntry.getValue());
+        }
+
     }
 }

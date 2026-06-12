@@ -2,6 +2,7 @@ package com.placementtraining.jornalApp.service;
 
 import com.placementtraining.jornalApp.apiResponse.WeatherResponse;
 import com.placementtraining.jornalApp.cache.AppCache;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
@@ -21,7 +22,7 @@ public class WeatherService {
     private AppCache appCache;
 
     public WeatherResponse getWeather(String city){
-        String finalapi=appCache.App_Cache.get("weathe_api").replace("YOUR_KEY",apikey).replace("CITY",city);
+        String finalapi=appCache.App_Cache.get("WEATHER_API").replace("YOUR_KEY",apikey).replace("CITY",city);
        ResponseEntity<WeatherResponse> response= restTemplate.exchange(finalapi, HttpMethod.GET,null, WeatherResponse.class);
        WeatherResponse body=  response.getBody();
        return body;
