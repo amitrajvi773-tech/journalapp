@@ -1,17 +1,22 @@
 package com.placementtraining.jornalApp.entity;
+import jakarta.validation.constraints.Email;
+
+
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.placementtraining.jornalApp.entity.JournalEntry;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.lang.annotation.Documented;
 import java.util.ArrayList;
 import java.util.List;
-
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
     @Id
@@ -24,6 +29,11 @@ public class User {
     @Column(nullable = false)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
+
+    @Email
+    private String email;
+
+    private boolean sentimentAnalysis;
 
 
 
