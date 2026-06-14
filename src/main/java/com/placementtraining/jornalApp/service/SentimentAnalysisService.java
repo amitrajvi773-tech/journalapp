@@ -1,7 +1,7 @@
 package com.placementtraining.jornalApp.service;
 
 public class SentimentAnalysisService {
-    public int getSentiment(String text){
-        return 1;
+    public String getSentiment(String text){
+        return " ";
     }
 }
