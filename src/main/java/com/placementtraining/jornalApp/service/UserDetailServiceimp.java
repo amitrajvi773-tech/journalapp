@@ -15,8 +15,8 @@ public class UserDetailServiceimp implements UserDetailsService {
     @Autowired
     UserRepository userRepository;
 
-    @Autowired
-    PasswordEncoder passwordEncoder;
+//    @Autowired
+//    PasswordEncoder passwordEncoder;
 
     public UserDetailServiceimp() {
         System.out.println("UserDetailServiceimp loaded");

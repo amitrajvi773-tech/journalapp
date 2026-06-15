@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 @Slf4j
@@ -28,9 +29,11 @@ public class JournalEntryService  {
        User user =userService.findByUsername(username);
         try {
             if (user != null) {
-            JournalEntry saved = journalEntryRepository.save(journalEntry);
-            user.getJournalEntries().add(saved);
-            userService.saveUser(user);}
+                journalEntry.setDate(LocalDateTime.now());
+                JournalEntry saved = journalEntryRepository.save(journalEntry);
+                user.getJournalEntries().add(saved);
+                userService.saveUser(user);
+            }
             else{
                 System.out.println("user not exist");
             }

@@ -13,15 +13,17 @@ public class PublicController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/test")
-    public void testing(){
-        System.out.println("hello testing happening");
-    }
+//    @GetMapping("/test")
+//    public void testing(){
+//        System.out.println("hello testing happening");
+//    }
 
-    @PostMapping
+    @PostMapping("/user")
     public ResponseEntity<?> createuser(@RequestBody User user){
         try {
-            return new ResponseEntity<>(HttpStatus.CREATED);
+
+            User savedUser = userService.saveNewUser(user);
+            return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
         } catch (Exception e) {
             e.printStackTrace();
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);        }

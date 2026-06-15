@@ -17,7 +17,7 @@ public class UserRepositoryImp {
 
     public List<User> getUserBySA() {
 
-        String sql = "SELECT * FROM user WHERE email IS NOT NULL AND sentiment_analysis = true";
+        String sql = "SELECT * FROM user WHERE email IS NOT NULL ";
 
         return jdbcTemplate.query(
                 sql,
