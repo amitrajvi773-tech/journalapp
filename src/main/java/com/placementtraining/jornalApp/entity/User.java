@@ -1,4 +1,5 @@
 package com.placementtraining.jornalApp.entity;
+import com.placementtraining.jornalApp.enums.Sentiment;
 import jakarta.validation.constraints.Email;
 
 
@@ -33,7 +34,6 @@ public class User {
     @Email
     private String email;
 
-    private boolean sentimentAnalysis;
 
 
 

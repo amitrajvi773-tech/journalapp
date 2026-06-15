@@ -1,5 +1,6 @@
 package com.placementtraining.jornalApp.entity;
 
+import com.placementtraining.jornalApp.enums.Sentiment;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,6 +18,8 @@ public class JournalEntry {
     private String name;
     private String content;
     private LocalDateTime date;
+    private Sentiment sentiment;
+
 
 
 
