@@ -1,5 +1,6 @@
 package com.placementtraining.jornalApp.repository;
 
+import com.placementtraining.jornalApp.entity.JournalEntry;
 import com.placementtraining.jornalApp.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -26,7 +27,9 @@ public class UserRepositoryImp {
                     user.setId(rs.getInt("id"));
                     user.setUsername(rs.getString("username"));
                     user.setPassword(rs.getString("password"));
+                    user.setEmail(rs.getString("email"));
                     return user;
                 });
     }
+
 }

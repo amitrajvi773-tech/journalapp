@@ -4,7 +4,6 @@ import com.placementtraining.jornalApp.Schedular.UserSchedular;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 
 
 @SpringBootTest

@@ -23,6 +23,6 @@ public class AppCache {
         for(ConfigJournalAppEntry configJournalAppEntry:all){
         App_Cache.put(configJournalAppEntry.getConfigkey(),configJournalAppEntry.getValue());
         }
-
+ 
     }
 }
